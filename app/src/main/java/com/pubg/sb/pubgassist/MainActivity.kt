@@ -1,9 +1,15 @@
 package com.pubg.sb.pubgassist
 
-import android.support.v7.app.AppCompatActivity
+import android.accessibilityservice.AccessibilityServiceInfo
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
+import android.support.v7.app.AppCompatActivity
+import android.view.accessibility.AccessibilityManager
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.DataOutputStream
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,17 +17,44 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        button1.setOnClickListener { _ ->
-            execShellCmd("sendevent /dev/input/event1 1 158 1")
-            execShellCmd("sendevent /dev/input/event1 1 158 0")
+        startKeyboardService()
+        initView()
+    }
 
-//            Thread(Runnable {
-//                Thread.sleep(300)
-//                execShellCmd("sendevent /dev/input/event1 1 158 0")
-//            }).start()
+    override fun onResume() {
+        super.onResume()
+        button1.text = if (isServiceEnabled()) "关闭键盘监听" else "打开键盘监听"
+    }
+
+    private fun initView() {
+        button1.setOnClickListener { _ ->
+            openAccSetting()
         }
-        button2.setOnClickListener { _ -> execShellCmd("sendevent /dev/input/event1 1 158 0") }
-        button3.setOnClickListener { _ -> execShellCmd("sendevent /dev/input/event1 1 158 1") }
+    }
+
+    private fun startKeyboardService() {
+        if (!isServiceEnabled()) {
+            openAccSetting()
+        }
+    }
+
+    private fun openAccSetting() {
+        //打开系统无障碍设置界面
+        val accessibleIntent = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
+        startActivity(accessibleIntent)
+    }
+
+    //检查服务是否开启
+    private fun isServiceEnabled(): Boolean {
+        val accessibilityManager = getSystemService(Context.ACCESSIBILITY_SERVICE) as AccessibilityManager
+
+        val accServices = accessibilityManager.getEnabledAccessibilityServiceList(AccessibilityServiceInfo.FEEDBACK_ALL_MASK)
+        accServices.forEach {
+            if (it.id.contains("service.KeyBoardService")) {
+                return true
+            }
+        }
+        return false
     }
 
     /**

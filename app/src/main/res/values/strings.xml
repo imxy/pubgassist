@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">pubgassist</string>
+    <string name="key_board_acc_note">接收键盘事件</string>
 </resources>

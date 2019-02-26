@@ -2,6 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+<<<<<<< HEAD
     <mapping directory="$PROJECT_DIR$/pubgassist" vcs="Git" />
+=======
+>>>>>>> 132fc8db314be5d5edf95bf8e9327c468ff48008
   </component>
 </project>

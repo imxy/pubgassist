@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.support.v7.app.AppCompatActivity
 import android.view.accessibility.AccessibilityManager
+import com.hunter.library.debug.HunterDebug
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.DataOutputStream
 
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         button1.text = if (isServiceEnabled()) "关闭键盘监听" else "打开键盘监听"
     }
 
+    @HunterDebug
     private fun initView() {
         button1.setOnClickListener { _ ->
             openAccSetting()

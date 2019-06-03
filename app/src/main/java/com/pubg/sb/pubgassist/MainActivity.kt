@@ -3,6 +3,7 @@ package com.pubg.sb.pubgassist
 import android.accessibilityservice.AccessibilityServiceInfo
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.support.v7.app.AppCompatActivity
@@ -10,6 +11,9 @@ import android.view.accessibility.AccessibilityManager
 import com.hunter.library.debug.HunterDebug
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.DataOutputStream
+import android.widget.Toast
+import com.pubg.sb.pubgassist.service.FloatingService
+import com.pubg.sb.pubgassist.service.FloatingService.isStarted
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        startKeyboardService()
+//        startKeyboardService()
         initView()
     }
 
@@ -29,14 +33,34 @@ class MainActivity : AppCompatActivity() {
 
     @HunterDebug
     private fun initView() {
-        button1.setOnClickListener { _ ->
+        button1.setOnClickListener {
             openAccSetting()
+        }
+
+        button2.setOnClickListener {
+            startFloatingButtonService()
+        }
+
+        viewTest.setOnClickListener {
+           Toast.makeText(this,"点击了 ",Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun startKeyboardService() {
         if (!isServiceEnabled()) {
             openAccSetting()
+        }
+    }
+
+    private fun startFloatingButtonService() {
+        if (isStarted) {
+            return
+        }
+        if (!Settings.canDrawOverlays(this)) {
+            Toast.makeText(this, "当前无权限，请授权", Toast.LENGTH_SHORT).show()
+            startActivityForResult(Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:$packageName")), 0)
+        } else {
+            startService(Intent(this@MainActivity, FloatingService::class.java))
         }
     }
 

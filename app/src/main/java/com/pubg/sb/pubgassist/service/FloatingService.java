@@ -106,6 +106,7 @@ public class FloatingService extends Service {
             tag = true;
         } else {
             button.setText("开始");
+            count = 0;
             tag = false;
         }
 
@@ -127,7 +128,7 @@ public class FloatingService extends Service {
                     clickDMB(view);
                     Thread.sleep(1200);
                     back(view);
-
+                    Thread.sleep(1000);
                     count++;
                     if (count > 50) {
                         tag = false;

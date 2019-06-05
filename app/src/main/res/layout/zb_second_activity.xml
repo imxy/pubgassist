@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText,TooManyViews">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tvBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="返回"
+            android:textColor="#333333"
+            android:textSize="18sp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tvClear"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="清空"
+            android:textColor="#333333"
+            android:textSize="18sp" />
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tvSave"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:gravity="center"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="保存"
+            android:textColor="#333333"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#dddddd" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:weightSum="6">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_weight="1"
+            android:padding="15dp"
+            android:textColor="#333333"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="得分"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="篮板"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="助攻"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="抢断"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="盖帽"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#dddddd" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:weightSum="6">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="A1"
+            android:textColor="#333333"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA1_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA1_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA1_3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA1_4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA1_5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#dddddd" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:weightSum="6">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="A2"
+            android:textColor="#333333"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA2_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA2_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA2_3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA2_4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA2_5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#dddddd" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:weightSum="6">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="A3"
+            android:textColor="#333333"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA3_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA3_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA3_3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA3_4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA3_5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#dddddd" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:weightSum="6">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="B1"
+            android:textColor="#333333"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA4_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA4_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA4_3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA4_4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA4_5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#dddddd" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:weightSum="6">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="B2"
+            android:textColor="#333333"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA5_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA5_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA5_3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA5_4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA5_5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#dddddd" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:weightSum="6">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="B3"
+            android:textColor="#333333"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA6_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA6_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA6_3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA6_4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#dddddd" />
+
+        <android.support.v7.widget.AppCompatCheckedTextView
+            android:id="@+id/tvScoreA6_5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_stroke_000"
+            android:gravity="center"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/color_selector_333_999"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#dddddd" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/ivMinus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/btn1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ivAdd"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/ivAdd"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/btn2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivMinus"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tvSessionIndex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="第 1 场" />
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>

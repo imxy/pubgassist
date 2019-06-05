@@ -14,6 +14,7 @@ import java.io.DataOutputStream
 import android.widget.Toast
 import com.pubg.sb.pubgassist.service.FloatingService
 import com.pubg.sb.pubgassist.service.FloatingService.isStarted
+import com.pubg.sb.pubgassist.zb.ZBFirstActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -39,6 +40,10 @@ class MainActivity : AppCompatActivity() {
 
         button2.setOnClickListener {
             startFloatingButtonService()
+        }
+
+        button3.setOnClickListener {
+            ZBFirstActivity.start(this)
         }
 
         viewTest.setOnClickListener {

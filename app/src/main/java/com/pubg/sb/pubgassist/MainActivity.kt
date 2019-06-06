@@ -5,16 +5,19 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.provider.Settings
 import android.support.v7.app.AppCompatActivity
 import android.view.accessibility.AccessibilityManager
-import com.hunter.library.debug.HunterDebug
-import kotlinx.android.synthetic.main.activity_main.*
-import java.io.DataOutputStream
 import android.widget.Toast
+import com.hunter.library.debug.HunterDebug
+import com.pubg.sb.pubgassist.adb.SuProcess
 import com.pubg.sb.pubgassist.service.FloatingService
 import com.pubg.sb.pubgassist.service.FloatingService.isStarted
 import com.pubg.sb.pubgassist.zb.ZBFirstActivity
+import kotlinx.android.synthetic.main.activity_main.*
+import java.io.DataOutputStream
+import java.io.File
 
 
 class MainActivity : AppCompatActivity() {
@@ -45,17 +48,21 @@ class MainActivity : AppCompatActivity() {
         button3.setOnClickListener {
             ZBFirstActivity.start(this)
         }
-
-        viewTest.setOnClickListener {
-           Toast.makeText(this,"点击了 ",Toast.LENGTH_SHORT).show()
+        button4.setOnClickListener {
+            testScreenShot()
         }
+
     }
 
-    private fun startKeyboardService() {
-        if (!isServiceEnabled()) {
-            openAccSetting()
+    private fun testScreenShot() {
+        val fileDir = File(Environment.getExternalStorageDirectory().toString() + File.separator + "1")
+        if (!fileDir.exists()) {
+            fileDir.mkdirs()
         }
+
+        SuProcess.screenShot(fileDir.toString() + File.separator + System.currentTimeMillis() + ".jpg")
     }
+
 
     private fun startFloatingButtonService() {
         if (isStarted) {

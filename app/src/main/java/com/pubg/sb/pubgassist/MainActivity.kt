@@ -12,8 +12,10 @@ import android.view.accessibility.AccessibilityManager
 import android.widget.Toast
 import com.hunter.library.debug.HunterDebug
 import com.pubg.sb.pubgassist.adb.SuProcess
+import com.pubg.sb.pubgassist.ocr.OCRActivity
 import com.pubg.sb.pubgassist.service.FloatingService
 import com.pubg.sb.pubgassist.service.FloatingService.isStarted
+import com.pubg.sb.pubgassist.service.FloatingService2
 import com.pubg.sb.pubgassist.zb.ZBFirstActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.DataOutputStream
@@ -45,11 +47,19 @@ class MainActivity : AppCompatActivity() {
             startFloatingButtonService()
         }
 
+        button22.setOnClickListener {
+            startFloatingButtonService2()
+        }
+
         button3.setOnClickListener {
             ZBFirstActivity.start(this)
         }
         button4.setOnClickListener {
             testScreenShot()
+        }
+
+        button5.setOnClickListener {
+            OCRActivity.start(this)
         }
 
     }
@@ -73,6 +83,18 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:$packageName")), 0)
         } else {
             startService(Intent(this@MainActivity, FloatingService::class.java))
+        }
+    }
+
+    private fun startFloatingButtonService2() {
+        if (FloatingService2.isStarted) {
+            return
+        }
+        if (!Settings.canDrawOverlays(this)) {
+            Toast.makeText(this, "当前无权限，请授权", Toast.LENGTH_SHORT).show()
+            startActivityForResult(Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:$packageName")), 0)
+        } else {
+            startService(Intent(this@MainActivity, FloatingService2::class.java))
         }
     }
 

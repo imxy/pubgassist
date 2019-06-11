@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.PixelFormat;
+import android.graphics.Point;
+import android.graphics.Point;
 import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
@@ -24,15 +26,19 @@ import com.pubg.sb.pubgassist.adb.SuProcess;
 
 import java.io.File;
 
+import util.LogUtil;
+
 /**
  * @author XY on 2019/6/3
  * @apiNote 悬浮窗 service
  */
-public class FloatingService extends Service {
+public class FloatingService2 extends Service {
     public static boolean isStarted = false;
 
     private WindowManager windowManager;
     private WindowManager.LayoutParams layoutParams;
+    private Button mBtnStop;
+    private Button mBtnStart1;
 
     @Override
     public void onCreate() {
@@ -71,78 +77,70 @@ public class FloatingService extends Service {
         if (Settings.canDrawOverlays(this)) {
             new Button(getApplicationContext());
             @SuppressLint("InflateParams")
-            View floatView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.layout_float, null);
+            View floatView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.layout_float2, null);
             windowManager.addView(floatView, layoutParams);
             FloatingOnTouchListener onTouchListener = new FloatingOnTouchListener();
             floatView.setOnTouchListener(onTouchListener);
 
-            Button buttonStart = floatView.findViewById(R.id.btnStart);
-            buttonStart.setOnClickListener(v -> {
-                Log.d("PUBG", "点击了吗");
-                mockClick((Button) v);
-            });
-            buttonStart.setOnTouchListener(onTouchListener);
+            mBtnStop = floatView.findViewById(R.id.btnStop);
+            mBtnStop.setOnClickListener(v -> stopLoop());
+            mBtnStop.setOnTouchListener(onTouchListener);
 
-            Button buttonScreenShot = floatView.findViewById(R.id.btnScreen);
-            buttonScreenShot.setOnClickListener(v -> testScreenShot());
-            buttonScreenShot.setOnTouchListener(onTouchListener);
-
+            mBtnStart1 = floatView.findViewById(R.id.btnStart1);
+            mBtnStart1.setOnClickListener(v -> mockClick1((Button) v));
+            mBtnStart1.setOnTouchListener(onTouchListener);
         }
     }
 
-    @SuppressWarnings("ResultOfMethodCallIgnored")
-    private void testScreenShot() {
-        File fileDir = new File(Environment.getExternalStorageDirectory().toString() + File.separator + "1");
-        if (!fileDir.exists()) {
-            fileDir.mkdirs();
-        }
-
-        SuProcess.screenShot(fileDir.toString() + File.separator + System.currentTimeMillis() + ".jpg");
+    private void stopLoop() {
+        count = 0;
+        tag = false;
+        mBtnStop.post(() -> mBtnStop.setText("停止"));
     }
 
     private boolean tag = false;
     private int count = 0;
 
-    private void mockClick(final Button button) {
+//    private Point[] mPoint1 ={new Point(209,250),new Point(209,806),new Point(209,1510),new Point(209,2075),
+//            new Point(528,580),new Point(528,1125),new Point(528,2291),new Point(528,643),
+//            new Point(885,250),new Point(885,806),new Point(885,1510),new Point(885,5075)};
 
-        if ("开始".contentEquals(button.getText())) {
-            button.setText("停止");
-            tag = true;
-        } else {
-            button.setText("开始");
-            count = 0;
-            tag = false;
-        }
+    private Point[] mPoint1 = {new Point(212, 591), new Point(209, 895), new Point(209, 1223), new Point(209, 1550), new Point(272, 1900),
+            new Point(528, 244), new Point(528, 1072), new Point(528, 1447), new Point(528, 1739), new Point(528, 2093),
+            new Point(885, 591), new Point(885, 895), new Point(885, 1223), new Point(885, 1550), new Point(885, 1900)};
 
-        executeLoop2(button);
+    private void mockClick1(final Button button) {
+        mBtnStop.setText("进行中");
+        tag = true;
+        count = 0;
+
+
+        executeLoop1(button);
     }
 
-    @SuppressLint("CheckResult")
-    private void executeLoop2(final Button button) {
+    private void executeLoop1(Button button) {
         if (!tag) return;
-
-        clickLMB(button);
+        Point point = mPoint1[count];
+        clickQGD(point, button);
         new Thread(() -> {
             try {
-                Thread.sleep(1200);
-                clickQGD(button);
                 Thread.sleep(12000);
                 clickDMB(button);
                 Thread.sleep(1200);
                 back(button);
                 Thread.sleep(1000);
                 count++;
-                if (count > 50) {
-                    tag = false;
-                    button.setText("开始");
+                if (count >= mPoint1.length) {
+                    stopLoop();
                 }
-                executeLoop2(button);//开始循环
+                executeLoop1(button);
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }).start();
     }
+
 
     private void back(View view) {
         view.post(() -> {
@@ -151,21 +149,13 @@ public class FloatingService extends Service {
         });
     }
 
-    //点击领猫币
-    private void clickLMB(View view) {
-        view.post(() -> {
-            if (!tag) return;
-            SuProcess.ScreenClick(904, 1685);
-            Log.e("MMMMMMM", "点击领猫币");
-        });
-    }
 
-    //点击去逛店
-    private void clickQGD(View view) {
+    //点击进入店铺
+    private void clickQGD(Point point, View view) {
         view.post(() -> {
             if (!tag) return;
-            SuProcess.ScreenClick(916, 1363);
-            Log.e("MMMMMMM", "点击去逛店");
+            SuProcess.ScreenClick(point.x, point.y);
+            LogUtil.e("点击进入店铺");
         });
     }
 
@@ -174,7 +164,7 @@ public class FloatingService extends Service {
         view.post(() -> {
             if (!tag) return;
             SuProcess.ScreenClick(965, 1128);
-            Log.e("MMMMMMM", "点击得到猫币");
+            LogUtil.e("点击得到猫币");
         });
     }
 

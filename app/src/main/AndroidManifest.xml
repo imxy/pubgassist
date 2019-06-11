@@ -39,9 +39,11 @@
                 android:resource="@xml/accessibilityservice" />
         </service>
         <service android:name=".service.FloatingService" />
+        <service android:name=".service.FloatingService2" />
 
         <activity android:name=".zb.ZBFirstActivity" />
         <activity android:name=".zb.ZBSecondActivity" />
+        <activity android:name=".ocr.OCRActivity" />
     </application>
 
 </manifest>

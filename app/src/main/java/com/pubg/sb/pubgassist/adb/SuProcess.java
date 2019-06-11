@@ -86,7 +86,7 @@ public class SuProcess {
      * 模拟滑动屏幕
      */
     public static void ScreenSwipe(final int x1, final int y1, final int x2, final int y2) {
-        Delay(1100);    // 滑动屏幕时执行延时
+        Delay(100);    // 滑动屏幕时执行延时
 
         String cmd = "input swipe" + " " + x1 + " " + y1 + " " + x2 + " " + y2;
         Exec(cmd);
@@ -156,12 +156,11 @@ public class SuProcess {
      * 获取屏幕分辨率
      */
     private static DisplayMetrics getScreeenSize(Context context) {
-        DisplayMetrics dm = context.getResources().getDisplayMetrics();
 
         // int screenWidth = dm.widthPixels; // 屏幕宽度
         // int screenHeight = dm.heightPixels; // 屏幕高度
 
-        return dm;
+        return context.getResources().getDisplayMetrics();
     }
 
     /**

@@ -9,6 +9,8 @@ import java.io.DataOutputStream;
 import java.io.File;
 import java.io.OutputStream;
 
+import util.LogUtil;
+
 /**
  * @author XY on 2019/6/5
  * @apiNote 各种cmd root命令
@@ -72,6 +74,7 @@ public class SuProcess {
     public static void ScreenClick(int x, int y) {
         String cmd = "input tap " + x + " " + y;
         Exec(cmd);
+        LogUtil.e("模拟屏幕点击坐标 ("+ x + "," + y+")");
     }
 
     /**

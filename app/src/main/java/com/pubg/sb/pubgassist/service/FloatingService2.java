@@ -5,13 +5,10 @@ import android.app.Service;
 import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.graphics.Point;
-import android.graphics.Point;
 import android.os.Build;
-import android.os.Environment;
 import android.os.IBinder;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -23,8 +20,6 @@ import android.widget.Button;
 import com.pubg.sb.pubgassist.R;
 import com.pubg.sb.pubgassist.adb.KeyCode;
 import com.pubg.sb.pubgassist.adb.SuProcess;
-
-import java.io.File;
 
 import util.LogUtil;
 
@@ -38,7 +33,7 @@ public class FloatingService2 extends Service {
     private WindowManager windowManager;
     private WindowManager.LayoutParams layoutParams;
     private Button mBtnStop;
-    private Button mBtnStart1;
+    private Thread mLoopThread;
 
     @Override
     public void onCreate() {
@@ -86,9 +81,9 @@ public class FloatingService2 extends Service {
             mBtnStop.setOnClickListener(v -> stopLoop());
             mBtnStop.setOnTouchListener(onTouchListener);
 
-            mBtnStart1 = floatView.findViewById(R.id.btnStart1);
-            mBtnStart1.setOnClickListener(v -> mockClick1((Button) v));
-            mBtnStart1.setOnTouchListener(onTouchListener);
+            Button btnStart1 = floatView.findViewById(R.id.btnStart1);
+            btnStart1.setOnClickListener(v -> mockClick1((Button) v));
+            btnStart1.setOnTouchListener(onTouchListener);
         }
     }
 
@@ -96,6 +91,9 @@ public class FloatingService2 extends Service {
         count = 0;
         tag = false;
         mBtnStop.post(() -> mBtnStop.setText("停止"));
+        if (null != mLoopThread) {
+            mLoopThread.interrupt();
+        }
     }
 
     private boolean tag = false;
@@ -120,10 +118,12 @@ public class FloatingService2 extends Service {
 
     private void executeLoop1(Button button) {
         if (!tag) return;
-        Point point = mPoint1[count];
-        clickQGD(point, button);
-        new Thread(() -> {
+
+        mLoopThread = new Thread(() -> {
             try {
+                Thread.sleep(100);
+                Point point = mPoint1[count];
+                clickQGD(point, button);
                 Thread.sleep(12000);
                 clickDMB(button);
                 Thread.sleep(1200);
@@ -138,7 +138,8 @@ public class FloatingService2 extends Service {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }).start();
+        });
+        mLoopThread.start();
     }
 
 

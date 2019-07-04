@@ -7,11 +7,12 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.Settings
-import android.support.v7.app.AppCompatActivity
 import android.view.accessibility.AccessibilityManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.hunter.library.debug.HunterDebug
 import com.pubg.sb.pubgassist.adb.SuProcess
+import com.pubg.sb.pubgassist.camera.CameraActivity
 import com.pubg.sb.pubgassist.ocr.OCRActivity
 import com.pubg.sb.pubgassist.service.FloatingService
 import com.pubg.sb.pubgassist.service.FloatingService.isStarted
@@ -52,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         button3.setOnClickListener {
-            ZBFirstActivity.start(this)
+            CameraActivity.start(this)
         }
         button4.setOnClickListener {
             testScreenShot()
@@ -63,6 +64,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
 
     private fun testScreenShot() {
         val fileDir = File(Environment.getExternalStorageDirectory().toString() + File.separator + "1")

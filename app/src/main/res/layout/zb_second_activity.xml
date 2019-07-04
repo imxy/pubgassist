@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvBack"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -23,7 +23,7 @@
             android:textColor="#333333"
             android:textSize="18sp" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvClear"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -36,7 +36,7 @@
             android:textSize="18sp" />
 
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvSave"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -59,7 +59,7 @@
         android:layout_height="60dp"
         android:weightSum="6">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="end"
@@ -73,7 +73,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -87,7 +87,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -101,7 +101,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -115,7 +115,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -129,7 +129,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -149,7 +149,7 @@
         android:layout_height="80dp"
         android:weightSum="6">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -163,7 +163,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA1_1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -180,7 +180,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA1_2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -197,7 +197,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA1_3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -214,7 +214,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA1_4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -231,7 +231,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA1_5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -254,7 +254,7 @@
         android:layout_height="80dp"
         android:weightSum="6">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -268,7 +268,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA2_1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -285,7 +285,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA2_2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -302,7 +302,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA2_3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -319,7 +319,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA2_4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -336,7 +336,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA2_5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -359,7 +359,7 @@
         android:layout_height="80dp"
         android:weightSum="6">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -373,7 +373,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA3_1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -390,7 +390,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA3_2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -407,7 +407,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA3_3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -424,7 +424,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA3_4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -441,7 +441,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA3_5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -464,7 +464,7 @@
         android:layout_height="80dp"
         android:weightSum="6">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -478,7 +478,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA4_1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -495,7 +495,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA4_2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -512,7 +512,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA4_3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -529,7 +529,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA4_4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -546,7 +546,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA4_5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -569,7 +569,7 @@
         android:layout_height="80dp"
         android:weightSum="6">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -583,7 +583,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA5_1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -600,7 +600,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA5_2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -617,7 +617,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA5_3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -634,7 +634,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA5_4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -651,7 +651,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA5_5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -674,7 +674,7 @@
         android:layout_height="80dp"
         android:weightSum="6">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -688,7 +688,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA6_1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -705,7 +705,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA6_2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -722,7 +722,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA6_3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -739,7 +739,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA6_4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -756,7 +756,7 @@
             android:layout_height="match_parent"
             android:background="#dddddd" />
 
-        <android.support.v7.widget.AppCompatCheckedTextView
+        <androidx.appcompat.widget.AppCompatCheckedTextView
             android:id="@+id/tvScoreA6_5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -774,11 +774,11 @@
         android:layout_height="0.5dp"
         android:background="#dddddd" />
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivMinus"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -789,7 +789,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivAdd"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -800,7 +800,7 @@
             app:layout_constraintStart_toEndOf="@id/ivMinus"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvSessionIndex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -813,5 +813,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="第 1 场" />
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

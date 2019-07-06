@@ -8,7 +8,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
 import android.provider.Settings;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;

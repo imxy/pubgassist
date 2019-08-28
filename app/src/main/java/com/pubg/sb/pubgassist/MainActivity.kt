@@ -13,11 +13,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.hunter.library.debug.HunterDebug
 import com.pubg.sb.pubgassist.adb.SuProcess
 import com.pubg.sb.pubgassist.camera.CameraActivity
-import com.pubg.sb.pubgassist.ocr.OCRActivity
+import com.pubg.sb.pubgassist.coroutine.CoroutineActivity
 import com.pubg.sb.pubgassist.service.FloatingService
 import com.pubg.sb.pubgassist.service.FloatingService.isStarted
 import com.pubg.sb.pubgassist.service.FloatingService2
-import com.pubg.sb.pubgassist.zb.ZBFirstActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.DataOutputStream
 import java.io.File
@@ -60,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         button5.setOnClickListener {
-            OCRActivity.start(this)
+            CoroutineActivity.start(this)
         }
 
     }

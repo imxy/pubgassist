@@ -19,7 +19,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".widget.irregular.IrregularViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,8 +44,8 @@
 
         <activity android:name=".zb.ZBFirstActivity" />
         <activity android:name=".zb.ZBSecondActivity" />
-        <activity android:name=".ocr.OCRActivity" />
         <activity android:name=".camera.CameraActivity" />
+        <activity android:name=".coroutine.CoroutineActivity" />
     </application>
 
 </manifest>

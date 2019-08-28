@@ -1,5 +1,6 @@
 package com.pubg.sb.pubgassist.widget.irregular
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
@@ -89,6 +90,7 @@ class IrRegularView @JvmOverloads constructor(context: Context, attrs: Attribute
 //        canvas?.restore()
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         if (event?.action == MotionEvent.ACTION_DOWN || event?.action == MotionEvent.ACTION_UP) {
             mRegions.forEachIndexed{index,region ->

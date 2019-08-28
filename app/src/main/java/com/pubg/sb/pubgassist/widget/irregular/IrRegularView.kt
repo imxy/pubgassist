@@ -36,37 +36,51 @@ class IrRegularView @JvmOverloads constructor(context: Context, attrs: Attribute
             it.isAntiAlias = true
             it.style = Paint.Style.FILL
             it.color = Color.RED
-            it.strokeWidth = 6f
+            it.strokeWidth = 0f
         }
 
 
         val innerRadius = mWidth / 4f - 10//内圆半径
         val outerRadius = mWidth / 2f - 10//外圆半径
-        val gapDegree = 15 / (2 * outerRadius * Math.PI) * 360//缝隙旋转的角度
+        val gapDegreeInner = 10 / (2 * innerRadius * Math.PI) * 360//缝隙旋转的角度
+        val gapDegreeOuter = 10 / (2 * outerRadius * Math.PI) * 360//缝隙旋转的角度
 
         //分为4个部分，每次画1/4,之后再旋转90°画下一次
         for (i in 0..3) {
             val path = Path()
-//            path.transform(Matrix().also {
-//                it.setTranslate(-mWidth / 2f, -mHeight / 2f)
-//                it.setRotate((i * 90).toFloat())
-//            })
+
 
             path.addArc(RectF(-innerRadius, -innerRadius, innerRadius, innerRadius),
-                    (-135f + gapDegree).toFloat(), (90f - gapDegree).toFloat())
-            path.lineTo((outerRadius * cos(degree2Radians(-(45 + gapDegree)))).toFloat(),
-                    (outerRadius * sin(degree2Radians(-(45 + gapDegree)))).toFloat())
+                    (-135f + gapDegreeInner).toFloat(), (90f - gapDegreeInner).toFloat())
+            path.lineTo((outerRadius * cos(degree2Radians(-(45 + gapDegreeOuter)))).toFloat(),
+                    (outerRadius * sin(degree2Radians(-(45 + gapDegreeOuter)))).toFloat())
             path.addArc(RectF(-outerRadius, -outerRadius, outerRadius, outerRadius),
-                    (-45f - gapDegree).toFloat(), -(90f - gapDegree).toFloat())
-            path.lineTo(-(innerRadius * cos(degree2Radians(-(45 + gapDegree)))).toFloat(),
-                    (innerRadius * sin(degree2Radians(-(45 + gapDegree)))).toFloat())
+                    (-45f - gapDegreeOuter).toFloat(), -(90f - gapDegreeOuter).toFloat())
+            path.lineTo(-(innerRadius * cos(degree2Radians(-(45 + gapDegreeInner)))).toFloat(),
+                    (innerRadius * sin(degree2Radians(-(45 + gapDegreeInner)))).toFloat())
+
+            path.transform(Matrix().also {
+                it.setRotate((i * 90).toFloat())
+            })
 
             val region = Region().also {
                 it.setPath(path, Region((-outerRadius).toInt(), (-outerRadius).toInt(),
                         outerRadius.toInt(), outerRadius.toInt()))
             }
+
+            region.translate(mWidth / 2, mHeight / 2)//讲坐标轴平移到中心
             mRegions.add(region)
         }
+
+        //添加中心的圆
+        val pathCircleCenter = Path()
+        pathCircleCenter.addCircle(0f, 0f, innerRadius - 15, Path.Direction.CW)
+        val regionCircleCenter = Region().also {
+            it.setPath(pathCircleCenter, Region((-innerRadius).toInt(), (-innerRadius).toInt(),
+                    innerRadius.toInt(), innerRadius.toInt()))
+        }
+        regionCircleCenter.translate(mWidth / 2, mHeight / 2)
+        mRegions.add(regionCircleCenter)
 
 
     }
@@ -90,18 +104,17 @@ class IrRegularView @JvmOverloads constructor(context: Context, attrs: Attribute
 //        canvas?.restore()
     }
 
+
     @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         if (event?.action == MotionEvent.ACTION_DOWN || event?.action == MotionEvent.ACTION_UP) {
-            mRegions.forEachIndexed{index,region ->
-                if (region.contains(event.x.toInt(), event.y.toInt())){
-                    setTag(id,index)
+            mRegions.forEachIndexed { index, region ->
+                if (region.contains(event.x.toInt(), event.y.toInt())) {
+                    setTag(id, index)
                     return super.onTouchEvent(event)
                 }
             }
-        }else{
-            return false
         }
-        return super.onTouchEvent(event)
+        return false
     }
 }

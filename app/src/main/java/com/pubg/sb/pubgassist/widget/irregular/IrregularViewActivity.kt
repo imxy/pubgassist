@@ -17,7 +17,7 @@ class IrregularViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.irregular_activity)
         irregularView.setOnClickListener {
-            Log.e("XYS", "" + it.tag?.toString())
+            Log.e("XYS", "" + it.getTag(it.id))
         }
     }
 
